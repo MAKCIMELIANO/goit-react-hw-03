@@ -38,9 +38,15 @@ export default function App() {
       String(contact.number).includes(filter.toLowerCase()),
   );
 
+  const resetData = () => {
+    setContacts(initialContacts);
+    localStorage.removeItem('contacts');
+  };
+
   return (
     <div>
       <h1>Phonebook</h1>
+      <button onClick={resetData}>Reset</button>
       <ContactForm contacts={contacts} onAddContact={handleAddContact} />
       <SearchBox value={filter} onFilter={setFilter} />
       <ContactList

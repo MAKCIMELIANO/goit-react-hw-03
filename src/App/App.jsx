@@ -46,7 +46,9 @@ export default function App() {
   return (
     <div>
       <h1>Phonebook</h1>
-      <button onClick={resetData}>Reset</button>
+      <button onClick={resetData} type="button" className="buttonReset">
+        Reset
+      </button>
       <ContactForm contacts={contacts} onAddContact={handleAddContact} />
       <SearchBox value={filter} onFilter={setFilter} />
       <ContactList
